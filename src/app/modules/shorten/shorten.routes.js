@@ -1,28 +1,16 @@
 import { Router } from 'express';
+
+import { handle } from '@common/utils/handle';
 import { createShortenFactory } from './factories/create-shorten.factory';
 
-const handle = (controller, handler) => {
-	return async (request, response, next) => {
-		const httpContext = {
-			request,
-			response,
-		};
-
-		try {
-			await handler.bind(controller)(httpContext);
-		} catch (error) {
-			return next(error);
-		}
-	};
-};
-
 const createShortenController = createShortenFactory();
+const handleCreate = handle(
+	createShortenController,
+	createShortenController.execute,
+);
 
 const routes = Router();
 
-routes.post(
-	'/shorts',
-	handle(createShortenController, createShortenController.execute),
-);
+routes.post('/shorts', handleCreate);
 
 export default routes;
