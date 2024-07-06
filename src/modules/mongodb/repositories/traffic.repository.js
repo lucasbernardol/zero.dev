@@ -20,4 +20,10 @@ export class TrafficRepository {
 
 		return traffic;
 	}
+
+	async findMany({ shortenId }) {
+		const traffics = await Traffic.find({ shortenId }).lean().exec();
+
+		return traffics;
+	}
 }

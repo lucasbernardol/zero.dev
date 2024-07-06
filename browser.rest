@@ -7,7 +7,13 @@ Content-Type: application/json
 }
 
 
+### ANALYTICS
+GET http://localhost:3333/api/analytics/LSKZFSnV HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+
 ### REDIRECTING (CODE)
 GET http://localhost:3333/LSKZFSnV HTTP/1.1
 Accept: *
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.2592.87
