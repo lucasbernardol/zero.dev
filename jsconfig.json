@@ -1,9 +1,11 @@
 {
 	"compilerOptions": {
 		"target": "ES2022",
-		"baseUrl": ".",
+		"baseUrl": "./src",
 		"paths": {
-			"@controllers/*": ["src/controllers/*"]
+			"@modules/*": ["modules/*"],
+			"@app/*": ["app/*"],
+			"@core/*": ["core/*"]
 		}
 	},
 	"include": ["src/**/*", "dist/**/*"],

@@ -1,20 +1,6 @@
 import 'module-alias/register';
+import 'dotenv/config';
 
-import { createServer } from 'node:http';
-import { showRegisteredAccounts } from '@controllers/UserController';
+import { bootstrap } from './server';
 
-function application() {
-	const server = createServer((request, response) => {
-		return response
-			.writeHead(200, {
-				'Content-Type': 'application/json',
-			})
-			.end(JSON.stringify(showRegisteredAccounts()));
-	});
-
-	return server;
-}
-
-const app = application().listen(3333);
-
-app.on('listening', () => console.log('\nServer starded!'));
+void bootstrap();
